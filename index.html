@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Nails Club Studio | Manicura & Pedicura Studio en CABA. El arte del detalle y la elegancia.">
     <title>THE NAILS CLUB STUDIO | Manicura & Pedicura Rusa</title>
 
-    <!-- Google Fonts Premium -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-main: #FAF8F5;
-            --bg-card: #FFFFFF;
-            --text-dark: #141414;
-            --text-muted: #6E6E6E;
-            --accent-gold: #B89248;
-            --border-line: rgba(20, 20, 20, 0.08);
-            --font-title: 'Playfair Display', serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --luxury-black: #1A1A1A;
+            --luxury-gold: #C5A059;
+            --luxury-bg-soft: #FAF8F6; /* Fondo ultra claro, neutro y delicado */
+            --luxury-bg-alt: #F5F2EC;  /* Fondo alternativo muy suave */
+            --luxury-white: #FFFFFF;
+            --text-dark: #333333;
+            --text-muted: #777777;
+            --border-subtle: rgba(0, 0, 0, 0.04);
+            --transition-smooth: all 0.3s ease;
         }
 
         * {
@@ -30,34 +33,45 @@
             box-sizing: border-box;
         }
 
-        html { scroll-behavior: smooth; }
+        html { 
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
 
         body {
-            font-family: var(--font-body);
-            background-color: var(--bg-main);
+            font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
+            background-color: var(--luxury-white);
             line-height: 1.6;
-            font-weight: 300;
+            font-weight: 300; /* Texto fino */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Tipografía Ligera */
+        h1, h2, h3, .brand-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300; /* Títulos finos sin negrita pesada */
+            letter-spacing: 1.5px;
         }
 
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1.2rem;
         }
 
-        /* Navigation */
+        /* Header / Navegación */
         header {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            background: rgba(250, 248, 245, 0.9);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border-line);
+            right: 0;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid var(--border-subtle);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 0.7rem 0;
         }
 
         nav {
@@ -66,331 +80,467 @@
             align-items: center;
         }
 
-        .brand-logo {
+        .logo-container {
             display: flex;
             align-items: center;
             gap: 0.8rem;
             text-decoration: none;
-            color: var(--text-dark);
+            color: var(--luxury-black);
         }
 
-        .brand-logo img {
+        .logo-img {
             width: 38px;
             height: 38px;
             border-radius: 50%;
             object-fit: cover;
+            border: 1px solid rgba(197, 160, 89, 0.3);
         }
 
-        .brand-name {
-            font-family: var(--font-title);
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .nav-menu {
+        .logo-text {
             display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
+            flex-direction: column;
         }
 
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.75rem;
+        .logo-title {
+            font-size: 0.95rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            transition: var(--transition);
+            line-height: 1;
+            font-weight: 300;
+            color: var(--luxury-black);
         }
 
-        .nav-menu a:hover { color: var(--accent-gold); }
-
-        .btn-cta {
-            background: var(--text-dark);
-            color: #FFFFFF !important;
-            padding: 0.7rem 1.5rem;
-            font-size: 0.7rem !important;
-            letter-spacing: 2px !important;
+        .logo-sub {
+            font-size: 0.55rem;
+            letter-spacing: 3px;
+            color: var(--luxury-gold);
             text-transform: uppercase;
-            transition: var(--transition);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-cta:hover {
-            background: var(--accent-gold);
-        }
-
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.3rem;
-            cursor: pointer;
-            color: var(--text-dark);
-        }
-
-        /* Hero Editorial Rediseñado */
-        .hero-editorial {
-            padding: 10rem 0 5rem;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
-            align-items: center;
-            border-bottom: 1px solid var(--border-line);
-        }
-
-        .hero-text-content h1 {
-            font-family: var(--font-title);
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            line-height: 1.05;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-text-content h1 span {
-            display: block;
-            font-style: italic;
-            color: var(--accent-gold);
-        }
-
-        .hero-text-content p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            max-width: 480px;
-            margin-bottom: 2rem;
+            margin-top: 3px;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 300;
         }
 
-        .hero-image-wrapper {
-            position: relative;
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 300;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover { color: var(--luxury-gold); }
+
+        .btn-luxury {
+            background: var(--luxury-black);
+            color: var(--luxury-white) !important;
+            padding: 0.65rem 1.3rem;
+            font-size: 0.68rem !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            border: 1px solid var(--luxury-black);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 300;
+            border-radius: 0;
+        }
+
+        .btn-luxury:hover {
+            background: var(--luxury-gold);
+            border-color: var(--luxury-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8.5rem 0 4.5rem;
             text-align: center;
+            background-color: var(--luxury-bg-soft);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
-        .hero-image-wrapper img {
-            width: 80%;
-            max-width: 320px;
-            border-radius: 200px 200px 0 0;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            border: 1px solid var(--border-line);
+        .hero-tagline {
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--luxury-gold);
+            margin-bottom: 1.2rem;
+            font-weight: 300;
         }
 
-        /* Sections Header */
-        .section-head {
-            margin-bottom: 3.5rem;
+        .hero-logo-main {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 2px;
+            background: var(--luxury-white);
         }
 
-        .section-tag {
-            font-size: 0.7rem;
+        .hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.1;
+            color: var(--luxury-black);
+            margin-bottom: 0.2rem;
             text-transform: uppercase;
             letter-spacing: 3px;
-            color: var(--accent-gold);
-            margin-bottom: 0.5rem;
-            display: block;
+            font-weight: 300;
+        }
+
+        .hero-sub-title {
+            font-size: 0.85rem;
+            letter-spacing: 5px;
+            color: var(--luxury-gold);
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        .hero .slogan {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 1.2rem;
+            font-weight: 300;
+        }
+
+        .hero p.description {
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Secciones Generales */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         .section-title {
-            font-family: var(--font-title);
-            font-size: 2.4rem;
-            font-weight: 400;
+            font-size: 2rem;
+            color: var(--luxury-black);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 300;
         }
 
-        /* Services Grid Rediseñado */
-        .services-section { padding: 6rem 0; }
+        .section-divider {
+            width: 30px;
+            height: 1px;
+            background: var(--luxury-gold);
+            margin: 0.8rem auto;
+            opacity: 0.6;
+        }
 
-        .services-list {
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        /* Servicios */
+        .services { padding: 4.5rem 0; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--luxury-white);
+            border: 1px solid var(--border-subtle);
+            padding: 2.2rem 1.5rem;
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover {
+            border-color: var(--luxury-gold);
+            transform: translateY(-2px);
+        }
+
+        .service-icon {
+            font-size: 1.3rem;
+            color: var(--luxury-gold);
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.8rem;
+            color: var(--luxury-black);
+            font-weight: 300;
+        }
+
+        .service-card p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Galería */
+        .gallery {
+            padding: 4.5rem 0;
+            background-color: var(--luxury-bg-alt);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 3 / 4;
+            background: #EFEFEF;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition-smooth);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Testimonios */
+        .testimonials { padding: 4.5rem 0; }
+
+        .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
         }
 
-        .service-box {
-            background: var(--bg-card);
-            padding: 2.5rem 2rem;
-            border: 1px solid var(--border-line);
-            transition: var(--transition);
-        }
-
-        .service-box:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-4px);
-        }
-
-        .service-num {
-            font-family: var(--font-title);
-            font-size: 1.2rem;
-            color: var(--accent-gold);
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .service-box h3 {
-            font-family: var(--font-title);
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            font-weight: 400;
-        }
-
-        .service-box p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        /* Galería Sin Textos Debajo */
-        .gallery-section {
-            padding: 6rem 0;
-            background: #F3EFEA;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
-            gap: 1.2rem;
-        }
-
-        .gallery-card {
-            aspect-ratio: 3/4;
-            overflow: hidden;
-            background: #E5E0D8;
-        }
-
-        .gallery-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-card:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Testimonios Estilo Cita Editorial */
-        .testimonials-section { padding: 6rem 0; }
-
-        .quotes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .quote-card {
-            background: var(--bg-card);
-            padding: 2.5rem;
-            border: 1px solid var(--border-line);
-        }
-
-        .quote-card p {
-            font-family: var(--font-title);
-            font-size: 1.15rem;
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-        }
-
-        .quote-author {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent-gold);
-        }
-
-        /* Instagram & Footer */
-        .instagram-block {
-            padding: 5rem 0;
-            background: var(--text-dark);
-            color: #FFFFFF;
+        .testimonial-card {
+            background: var(--luxury-white);
+            border: 1px solid var(--border-subtle);
+            padding: 2rem 1.5rem;
             text-align: center;
         }
 
-        .instagram-block h2 {
-            font-family: var(--font-title);
-            font-size: 2rem;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
+        .testimonial-card .stars {
+            color: var(--luxury-gold);
+            margin-bottom: 0.8rem;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            font-weight: 300;
         }
 
-        .instagram-block p {
-            color: #A0A0A0;
-            font-size: 0.8rem;
-            margin-bottom: 2rem;
+        .testimonial-card p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-style: italic;
+            line-height: 1.5;
+            font-weight: 300;
         }
 
-        .whatsapp-btn-float {
+        .testimonial-card .client-name {
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--luxury-gold);
+            font-weight: 300;
+        }
+
+        /* Instagram Section */
+        .instagram-section {
+            padding: 4rem 0;
+            text-align: center;
+            background: var(--luxury-black);
+            color: var(--luxury-white);
+        }
+
+        .instagram-section .section-title {
+            color: var(--luxury-white);
+            font-size: 1.7rem;
+            font-weight: 300;
+        }
+
+        .instagram-section p {
+            color: #999999;
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            margin-top: 0.4rem;
+            font-weight: 300;
+        }
+
+        .ig-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.68rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--luxury-white);
+            margin-top: 1.5rem;
+            text-decoration: none;
+            padding: 0.78rem 1.6rem;
+            border: 1px solid var(--luxury-gold);
+            transition: var(--transition-smooth);
+            font-weight: 300;
+        }
+
+        .ig-button:hover {
+            background: var(--luxury-gold);
+            color: var(--luxury-black);
+        }
+
+        /* Botón Flotante WhatsApp */
+        .whatsapp-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 50px;
-            height: 50px;
-            background: var(--text-dark);
-            color: #FFFFFF;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--luxury-black);
+            color: var(--luxury-white);
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             z-index: 1000;
-            border: 1px solid var(--accent-gold);
-            transition: var(--transition);
+            border: 1px solid var(--luxury-gold);
+            transition: var(--transition-smooth);
         }
 
-        .whatsapp-btn-float:hover {
-            background: var(--accent-gold);
+        .whatsapp-float:hover {
+            background-color: var(--luxury-gold);
+            color: var(--luxury-black);
         }
 
+        /* Footer */
         footer {
-            padding: 2rem 0;
+            background: #111111;
+            color: #777777;
+            padding: 1.8rem 0;
             text-align: center;
-            font-size: 0.7rem;
+            font-size: 0.62rem;
             letter-spacing: 2px;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-line);
             text-transform: uppercase;
+            font-weight: 300;
         }
 
-        /* Celular Responsivo */
-        @media (max-width: 850px) {
-            .hero-editorial {
-                grid-template-columns: 1fr;
-                padding: 7rem 0 3rem;
-                text-align: center;
+        /* Botón Menú Móvil */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: var(--luxury-black);
+            padding: 0.4rem;
+        }
+
+        /* --- ADAPTACIÓN A CELULARES --- */
+        @media (max-width: 768px) {
+            .mobile-menu-btn { 
+                display: block; 
             }
 
-            .hero-text-content p {
-                margin: 0 auto 2rem;
-            }
-
-            .hero-image-wrapper img {
-                width: 65%;
-            }
-
-            .menu-toggle { display: block; }
-
-            .nav-menu {
+            .nav-links {
                 display: none;
+                flex-direction: column;
                 position: absolute;
                 top: 100%;
                 left: 0;
-                width: 100%;
-                background: var(--bg-main);
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                border-bottom: 1px solid var(--border-line);
+                right: 0;
+                background: var(--luxury-white);
+                padding: 1.5rem;
+                border-bottom: 1px solid var(--border-subtle);
+                gap: 1.2rem;
+                box-shadow: 0 8px 15px rgba(0,0,0,0.03);
             }
 
-            .nav-menu.active { display: flex; }
+            .nav-links.active { 
+                display: flex; 
+            }
 
+            .nav-links a {
+                font-size: 0.75rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .btn-luxury {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 6.5rem 0 3rem;
+            }
+
+            .hero h1 { 
+                font-size: 1.9rem; 
+                letter-spacing: 2px;
+            }
+
+            .hero-sub-title {
+                font-size: 0.75rem;
+                letter-spacing: 3px;
+            }
+
+            .hero .slogan {
+                font-size: 1.05rem;
+            }
+
+            .hero p.description {
+                font-size: 0.78rem;
+                padding: 0 0.5rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .services, .gallery, .testimonials {
+                padding: 3rem 0;
+            }
+
+            /* Galería en 2 columnas para Celulares */
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 0.8rem;
+                gap: 0.6rem;
+            }
+
+            .services-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .service-card, .testimonial-card {
+                padding: 1.6rem 1.2rem;
             }
         }
     </style>
@@ -398,123 +548,150 @@
 <body>
 
     <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="brand-logo">
-                    <img src="nailsclub.png" alt="Logo The Nails Club">
-                    <span class="brand-name">The Nails Club</span>
-                </a>
-                <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#galeria">Trabajos</a></li>
-                    <li><a href="#testimonios">Opiniones</a></li>
-                    <li><a href="https://wa.me/tu-numero-aqui" target="_blank" class="btn-cta"><i class="fa-brands fa-whatsapp"></i> Reservar</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="container">
+            <a href="#" class="logo-container">
+                <img src="nailsclub.png" alt="The Nails Club Studio Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">THE NAILS CLUB</span>
+                    <span class="logo-sub">STUDIO</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#instagram">Instagram</a></li>
+                <li><a href="https://wa.me/tu-numero-aqui" target="_blank" class="btn-luxury"><i class="fa-brands fa-whatsapp"></i> Reservar Turno</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <!-- Hero Section Asimétrico -->
-        <section id="inicio" class="container">
-            <div class="hero-editorial">
-                <div class="hero-text-content">
-                    <h1>Arte & Cuidado <span>en tus Manos</span></h1>
-                    <p>Un espacio privado en CABA enfocado en la perfección técnica de la manicura rusa, soft gel y el cuidado estético de alta gama.</p>
-                    <a href="https://wa.me/tu-numero-aqui" target="_blank" class="btn-cta"><i class="fa-brands fa-whatsapp"></i> Agendar Cita</a>
-                </div>
-                <div class="hero-image-wrapper">
-                    <img src="nailsclub.png" alt="The Nails Club Studio">
-                </div>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="container">
+                <div class="hero-tagline">Haute Manicure & Pedicure Studio</div>
+                <img src="nailsclub.png" alt="The Nails Club Studio" class="hero-logo-main">
+                <h1>THE NAILS CLUB</h1>
+                <div class="hero-sub-title">STUDIO</div>
+                <p class="slogan">🤍 El cuidado está en los detalles</p>
+                <p class="description">Un espacio privado y exclusivo en CABA dedicado al perfeccionamiento técnico de la manicura rusa, soft gel y cuidado integral de uñas.</p>
+                <a href="https://wa.me/tu-numero-aqui" target="_blank" class="btn-luxury"><i class="fa-brands fa-whatsapp"></i> Agendar cita vía WhatsApp</a>
             </div>
         </section>
 
         <!-- Servicios -->
-        <section id="servicios" class="services-section">
+        <section id="servicios" class="services">
             <div class="container">
-                <div class="section-head">
-                    <span class="section-tag">Especialidades</span>
-                    <h2 class="section-title">Nuestros Servicios</h2>
+                <div class="section-header">
+                    <h2 class="section-title">Servicios</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Técnicas de precisión y alta durabilidad</p>
                 </div>
-                <div class="services-list">
-                    <div class="service-box">
-                        <span class="service-num">01</span>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-gem"></i></div>
                         <h3>Manicura & Pedicura Rusa</h3>
-                        <p>Limpieza profunda de cutículas y preparación anatómica con torno para un acabado limpio de máxima duración.</p>
+                        <p>Limpieza microscópica de cutícula y preparación perfecta de la placa ungueal para un acabado impecable.</p>
                     </div>
-                    <div class="service-box">
-                        <span class="service-num">02</span>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                         <h3>Soft Gel System</h3>
-                        <p>Extensiones ligeras y flexibles fabricadas en gel que garantizan un aspecto natural sin dañar tu uña.</p>
+                        <p>Extensiones de gel ultraligeras y flexibles que emulan la uña natural con máxima resistencia.</p>
                     </div>
-                    <div class="service-box">
-                        <span class="service-num">03</span>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
                         <h3>Kapping Gel</h3>
-                        <p>Capa de refuerzo estructurada que protege la uña natural favoreciendo un crecimiento fuerte y sano.</p>
+                        <p>Escudo de gel estructurado sobre la uña natural que previene fisuras y permite un crecimiento sano.</p>
                     </div>
-                    <div class="service-box">
-                        <span class="service-num">04</span>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-sparkles"></i></div>
                         <h3>Esmaltado Semipermanente</h3>
-                        <p>Pigmentos de alta definición y brillo espejo de larga duración adaptados a tu estilo personal.</p>
+                        <p>Pigmentación de alta cobertura y brillo espejo duradero formulado para proteger la uña.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Galería de Trabajos (Sin nombres debajo) -->
-        <section id="galeria" class="gallery-section">
+        <!-- Galería de Trabajos -->
+        <section id="galeria" class="gallery">
             <div class="container">
-                <div class="section-head">
-                    <span class="section-tag">Portafolio Visual</span>
+                <div class="section-header">
                     <h2 class="section-title">NUESTROS TRABAJOS</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Muestra visual de nuestra precisión y acabados</p>
                 </div>
+
                 <div class="gallery-grid">
-                    <div class="gallery-card"><img src="galeria-1-pedicura-milky.jpg" alt="Trabajo Realizado"></div>
-                    <div class="gallery-card"><img src="galeria-2-manicura-lavanda.jpg" alt="Trabajo Realizado"></div>
-                    <div class="gallery-card"><img src="galeria-3-manicura-ojo-gato.jpg" alt="Trabajo Realizado"></div>
-                    <div class="gallery-card"><img src="galeria-4-manicura-rusa.jpg" alt="Trabajo Realizado"></div>
-                    <div class="gallery-card"><img src="galeria-5-manicura-nail-art.jpg" alt="Trabajo Realizado"></div>
+                    <div class="gallery-item">
+                        <img src="galeria-1-pedicura-milky.jpg" alt="Portfolio Trabajo 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="galeria-2-manicura-lavanda.jpg" alt="Portfolio Trabajo 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="galeria-3-manicura-ojo-gato.jpg" alt="Portfolio Trabajo 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="galeria-4-manicura-rusa.jpg" alt="Portfolio Trabajo 4">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="galeria-5-manicura-nail-art.jpg" alt="Portfolio Trabajo 5">
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Testimonios -->
-        <section id="testimonios" class="testimonials-section">
+        <section id="testimonios" class="testimonials">
             <div class="container">
-                <div class="section-head">
-                    <span class="section-tag">Experiencias</span>
-                    <h2 class="section-title">Lo que dicen nuestras clientas</h2>
+                <div class="section-header">
+                    <h2 class="section-title">Experiencias</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Opiniones de quienes confían en nuestro Studio</p>
                 </div>
-                <div class="quotes-grid">
-                    <div class="quote-card">
-                        <p>«La prolijidad de la manicura rusa no tiene comparación. La atención al detalle es impecable en cada cita.»</p>
-                        <span class="quote-author">Camila R.</span>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"La precisión de la manicura rusa es simplemente inigualable. La atención al detalle y la elegancia del espacio marcan la diferencia."</p>
+                        <span class="client-name">Camila R.</span>
                     </div>
-                    <div class="quote-card">
-                        <p>«Mis uñas cambiaron por completo gracias al Kapping. Tienen una durabilidad fantástica y el trato es super exclusivo.»</p>
-                        <span class="quote-author">Valeria M.</span>
+
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"El tratamiento de Kapping transformó por completo mis uñas. Prolijidad absoluta y una durabilidad impecable durante semanas."</p>
+                        <span class="client-name">Valeria M.</span>
                     </div>
-                    <div class="quote-card">
-                        <p>«El resultado de los Soft Gel es delicado y muy natural. Sin dudas el mejor studio de uñas en Buenos Aires.»</p>
-                        <span class="quote-author">Agustina L.</span>
+
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"El acabado de los Soft Gel es ultra natural y elegante. Un verdadero servicio de alta categoría en Buenos Aires."</p>
+                        <span class="client-name">Agustina L.</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Instagram -->
-        <section class="instagram-block">
+        <!-- Instagram Section -->
+        <section id="instagram" class="instagram-section">
             <div class="container">
-                <h2>@THENAILSCLUB_BA</h2>
-                <p>Inspiración visual y novedades de nuestro estudio</p>
-                <a href="https://www.instagram.com/thenailsclub_ba/" target="_blank" class="btn-cta"><i class="fa-brands fa-instagram"></i> Ver Instagram</a>
+                <h2 class="section-title">@THENAILSCLUB_BA</h2>
+                <p>Nuestra bitácora diaria de diseño y cuidado</p>
+                <a href="https://www.instagram.com/thenailsclub_ba/" target="_blank" class="ig-button">
+                    <i class="fa-brands fa-instagram"></i> Descubrir en Instagram
+                </a>
             </div>
         </section>
     </main>
 
-    <a href="https://wa.me/tu-numero-aqui" class="whatsapp-btn-float" target="_blank" aria-label="Contacto por WhatsApp">
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/tu-numero-aqui" class="whatsapp-float" target="_blank" aria-label="Contacto por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -525,16 +702,17 @@
     </footer>
 
     <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
 
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
 
-        document.querySelectorAll('#navMenu a').forEach(link => {
+        // Cierra el menú móvil al tocar una opción
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
+                navLinks.classList.remove('active');
             });
         });
     </script>
