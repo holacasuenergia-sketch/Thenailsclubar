@@ -151,8 +151,8 @@
         }
 
         .hero-logo-main {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1.5rem;
@@ -236,11 +236,50 @@
             color: var(--text-muted);
         }
 
-        /* Testimonials */
-        .testimonials {
+        /* Gallery Section */
+        .gallery {
             padding: 5rem 0;
             background-color: var(--brand-soft);
         }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            background: var(--white);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--brand-dark);
+            background: var(--white);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Testimonials */
+        .testimonials { padding: 5rem 0; }
 
         .testimonials-grid {
             display: grid;
@@ -278,6 +317,7 @@
         .instagram-section {
             padding: 4rem 0;
             text-align: center;
+            background: var(--brand-soft);
             border-top: 1px solid var(--border-color);
         }
 
@@ -293,12 +333,13 @@
             padding: 0.6rem 1.2rem;
             border: 1px solid var(--border-color);
             border-radius: var(--radius);
+            background: var(--white);
             transition: var(--transition);
         }
 
         .ig-button:hover {
             border-color: var(--brand-dark);
-            background: var(--brand-soft);
+            transform: translateY(-2px);
         }
 
         /* Floating WhatsApp Button */
@@ -367,8 +408,7 @@
     <header>
         <nav class="container">
             <a href="#" class="logo-container">
-                <!-- Reemplazar 'logo.jpg' con la imagen real de tu logo local o URL -->
-                <img src="https://www.instagram.com/thenailsclub_ba/profile_pic" alt="The Nails Club Studio Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/45?text=NC'">
+                <img src="nailsclub.png" alt="The Nails Club Studio Logo" class="logo-img">
                 <div class="logo-text">
                     <span class="logo-title">THE NAILS CLUB</span>
                     <span class="logo-sub">STUDIO</span>
@@ -378,6 +418,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#galeria">Galería</a></li>
                 <li><a href="#testimonios">Testimonios</a></li>
                 <li><a href="#instagram">Instagram</a></li>
                 <li><a href="https://wa.me/tu-numero-aqui" target="_blank" class="btn-primary"><i class="fa-brands fa-whatsapp"></i> Pedir Turno</a></li>
@@ -389,8 +430,7 @@
         <!-- Hero Section -->
         <section id="inicio" class="hero">
             <div class="container">
-                <!-- Imagen del Logo Principal -->
-                <img src="https://via.placeholder.com/110?text=THE+NAILS+CLUB" alt="The Nails Club Studio" class="hero-logo-main">
+                <img src="nailsclub.png" alt="The Nails Club Studio" class="hero-logo-main">
                 <h1>The Nails Club</h1>
                 <p class="slogan">🤍 El cuidado está en los detalles</p>
                 <p>Especialistas en manicura y pedicura estética en CABA. Diseños y técnicas avanzadas para el cuidado y salud de tus uñas.</p>
@@ -424,6 +464,33 @@
                         <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                         <h3>Esmaltado Semipermanente</h3>
                         <p>Color perfecto, alta pigmentación y brillo intacto durante semanas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de Trabajos -->
+        <section id="galeria" class="gallery">
+            <div class="container">
+                <h2 class="section-title">Nuestros Trabajos</h2>
+                <p class="section-subtitle">Resultados reales de Manicura, Pedicura, Soft Gel y Kapping</p>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800&auto=format&fit=crop" alt="Soft Gel y Nail Art">
+                        <div class="gallery-caption">Soft Gel & Nail Art</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=800&auto=format&fit=crop" alt="Manicura Rusa e Impecable">
+                        <div class="gallery-caption">Manicura Rusa</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=800&auto=format&fit=crop" alt="Pedicura Estética y Cuidado de Pies">
+                        <div class="gallery-caption">Pedicura Rusa Estética</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop" alt="Kapping y Esmaltado Semipermanente">
+                        <div class="gallery-caption">Kapping Gel & Semipermanente</div>
                     </div>
                 </div>
             </div>
