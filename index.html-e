@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cinnamon Nails Studio Barcelona - Uñas saludables sin tóxicos, servicio exp
+ress 40 minutos para profesionales, manicura, pedicura, tratamientos de belleza, cejas y depilación.">
+    <meta name="keywords" content="uñas barcelona, manicura barcelona, pedicura barcelona, cejas barcelona, depilacion barcelona, uñas saludables, servicio express">
+    <title>Cinnamon Nails Studio | Salón de Uñas & Belleza Barcelona</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cinnamon: #B58758;
+            --cinnamon-light: #E8D4C4;
+            --cinnamon-dark: #8B6342;
+            --cinnamon-pale: #F5E8DD;
+            --white: #FFFFFF;
+            --gray-light: #F9F9F9;
+            --gray-medium: #666666;
+            --gray-dark: #333333;
+            --green-health: #7AB9A8;
+            --orange-express: #E8A846;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--gray-dark);
+            line-height: 1.6;
+            font-size: 16px;
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--cinnamon-dark);
+            font-weight: 600;
+        }
+
+        h1 { font-size: 2.5rem; line-height: 1.2; }
+        h2 { font-size: 2rem; margin-bottom: 0.75rem; }
+        h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        h4 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+
+        p { margin-bottom: 1rem; color: var(--gray-medium); }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 0.5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--cinnamon-dark);
+        }
+
+        .logo span {
+            color: var(--cinnamon);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--gray-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--cinnamon);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cinnamon);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--cinnamon);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            background: var(--cinnamon-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(181, 135, 88, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--cinnamon-dark);
+        }
+
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--gray-dark);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .lang-btn:hover {
+            color: var(--cinnamon);
+        }
+
+        .lang-btn.active {
+            color: var(--cinnamon);
+            font-weight: 700;
+        }
+
+        .lang-divider {
+            color: var(--gray-medium);
+        }
+
+        .nav-cta-wrapper {
+            margin-left: 1rem;
+            display: inline-block;
+        }
+
+        .nav-cta-button {
+            display: inline-block !important;
+            visibility: visible !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--cinnamon-pale) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 4rem 1.5rem;
+        }
+
+        .hero-text h1 {
+            margin-bottom: 1rem;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            color: var(--cinnamon);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text .description {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cinnamon);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-medium);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .trust-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+
+        .trust-badge .stars {
+            color: #FFD700;
+            font-size: 1.25rem;
+        }
+
+        /* About Section */
+        .section {
+            padding: 5rem 1.5rem;
+        }
+
+        .section-bg-gray {
+            background: var(--gray-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .line {
+            width: 60px;
+            height: 3px;
+            background: var(--cinnamon);
+            margin: 1rem auto;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .service-image {
+            height: 280px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            color: var(--cinnamon);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--cinnamon-dark);
+            margin: 0.75rem 0;
+        }
+
+        .service-description {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .service-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 1rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay p {
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            color: var(--cinnamon);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .instagram-link svg {
+            fill: currentColor;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-stars {
+            color: #FFD700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--gray-dark);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--cinnamon);
+        }
+
+        .testimonial-date {
+            font-size: 0.875rem;
+            color: var(--gray-medium);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--cinnamon);
+            flex-shrink: 0;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            background: #1DA851;
+        }
+
+        .btn-call {
+            background: var(--cinnamon);
+            color: var(--white);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-form h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--gray-light);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--cinnamon);
+        }
+
+        .submit-button {
+            width: 100%;
+            background: var(--cinnamon);
+            color: var(--white);
+            padding: 1rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-button:hover {
+            background: var(--cinnamon-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Map Section */
+        .map-section {
+            height: 400px;
+            margin-top: 2rem;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: var(--border-radius);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--cinnamon-dark);
+            color: var(--white);
+            padding: 3rem 1.5rem 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--cinnamon-light);
+        }
+
+        .footer-section h4 {
+            color: var(--cinnamon-light);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--cinnamon-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--cinnamon);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--cinnamon-light);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.875rem;
+            color: var(--cinnamon-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 1rem;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .language-selector {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.8rem;
+                margin-left: 0.8rem;
+                padding: 0.4rem 0.8rem;
+                background: var(--cinnamon-pale);
+                border-radius: var(--border-radius);
+            }
+
+            .lang-btn {
+                font-size: 0.85rem;
+                padding: 0.2rem 0.4rem;
+            }
+
+            .lang-divider {
+                display: none;
+            }
+
+            .nav-cta-wrapper {
+                display: block;
+                width: 100%;
+                margin: 0.5rem 0 0 0;
+                text-align: center;
+            }
+
+            .nav-cta-button {
+                display: block !important;
+                width: 100%;
+                margin: 0.5rem 0 0 0;
+                text-align: center;
+            }
+
+            .cta-button {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+                display: block !important;
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+
+            .features,
+            .services-grid,
+            .gallery-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="container">
+            <a href="#" class="logo">Cinnamon <span>Nails</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio" class="nav-text" data-key="inicio">Inicio</a></li>
+                <li><a href="#servicios" class="nav-text" data-key="servicios">Servicios</a></li>
+                <li><a href="#galeria" class="nav-text" data-key="galeria">Galería</a></li>
+                <li><a href="#fidelidad" class="nav-text" data-key="fidelidad">Fidelidad</a></li>
+                <li><a href="#contacto" class="nav-text" data-key="contacto">Contacto</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <div class="language-selector" id="languageSelector">
+                <button class="lang-btn active" data-lang="es">🇪🇸 ES</button>
+                <span class="lang-divider"></span>
+                <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+                <span class="lang-divider"></span>
+                <button class="lang-btn" data-lang="ca">🇪🇺 CA</button>
+            </div>
+            <div class="nav-cta-wrapper">
+                <a href="https://www.fresha.com/book-now/cinnamon-nails-y2ip4l56/all-offer?share=true&pId=2783306" target="_blank" class="cta-button nav-text nav-cta-button" data-key="reserva">Reserva</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="subtitle">✨ Uñas Saludables & Belleza Natural ✨</p>
+                <h1>Tu Momento de Belleza en Barcelona</h1>
+                <p class="description">Disfruta de nuestros servicios profesionales en un salón acogedor, con buena energía y un ambiente pensado para ti. Desde manicuras y tratamientos especializados hasta cuidados completos para tus uñas, encontrarás todo lo necesario para sentirte bien, relajarte y lucir impecable.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">5★</div>
+                        <div class="stat-label">Valoraciones</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">10y+</div>
+                        <div class="stat-label">Experiencia</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">40min</div>
+                        <div class="stat-label">Express</div>
+                    </div>
+                </div>
+                
+                <a href="https://www.fresha.com/book-now/cinnamon-nails-y2ip4l56/all-offer?share=true&pId=2783306" target="_blank" class="cta-button">Reserva Tu Cita</a>
+            </div>
+            <div class="hero-image">
+                <img src="hero-image.jpg" alt="Cinnamon Nails - Salón de uñas elegante en Barcelona">
+                <div class="trust-badge">
+                    <div class="stars">★★★★★</div>
+                    <p>4.8 en Google Maps</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section section-bg-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2>✨ Uñas hermosas, saludables y auténticas</h2>
+                <div class="line"></div>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Cuidado & belleza</h3>
+                    <p>Tus uñas reciben lo mejor: productos libres de tóxicos, seguros y pensados para tu salud.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Servicio ágil y profesional</h3>
+                    <p>Nos adaptamos a tu ritmo y necesidades. Cada trabajo se realiza con cuidado, sin prisas innecesarias, pero siempre con eficiencia.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>Resultados que inspiran</h3>
+                    <p>Cada clienta brilla con estilo propio. Creamos contenido auténtico que muestra resultados reales y listos para compartir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="servicios" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Servicios</h2>
+                <div class="line"></div>
+                <p>Calidad profesional con precios accesibles</p>
+            </div>
+            <div class="services-grid">
+                <!-- Manicura -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="service-manicura.jpg" alt="Manicura - Cinnamon Nails Barcelona">
+                    </div>
+                    <div class="service-content">
+                        <h3>Manicura</h3>
+                        <p class="service-description">Manicura profesional con productos de alta calidad y técnica experta.</p>
+                        <div class="service-item">
+                            <span>Manicura Básica</span>
+                            <span class="service-price">€12.90</span>
+                        </div>
+                        <div class="service-item">
+                            <span>Exprés Tradicional</span>
+                            <span class="service-price">€13.90</span>
+                        </div>
+                        <div class="service-item">
+                            <span>Exprés Semipermanente</span>
+                            <span class="service-price">€14.90</span>
+                        </div>
+                        <div class="service-item">
+                            <span>Semipermanente Premium</span>
+                            <span class="service-price">€25.00</span>
+                        </div>
+                        <div class="service-item">
+                            <span>Refuerzo Gel - ojo de gato</span>
+                            <span class="service-price">€45.00</span>
+                        </div>
+                        <div class="service-item">
+                            <span>Extensión de uñas gel</span>
+                            <span class="service-price">€40.00+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pedicura -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="service-pedicura.jpg" alt="Pedicura - Cinnamon Nails Barcelona">
+                    </div>
+                    <div class="service-content">
+                        <h3>Pedicura</h3>
+                        <p class="service-description">Pedicura profesional para relajarte y embellecer tus pies.</p>
+                        <div class="service-item">
+                            <span>Pedicura Básica</span>
+                            <span class="service-price">€19.90</span>
+                        </div>
+                        <div class="service-item">
+                            <span>Tradición Exprés</span>
+                            <span class="service-price">€20.90</span>
+                        </div>
+                        <div class="service-item">
+                            <span>Semipermanente Exprés</span>
+                            <span class="service-price">€21.90</span>
+                        </div>
+                        <div class="service-item">
+                            <span>Semipermanente Premium</span>
+                            <span class="service-price">€45.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beauty & Depilación -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="service-beauty.jpg" alt="Beauty & Depilación - Cinnamon Nails Barcelona">
+                    </div>
+                    <div class="service-content">
+                        <h3>Beauty & Depilación</h3>
+                        <p class="service-description">Tratamientos de belleza y depilación profesional en Barcelona.</p>
+                        <div class="service-item">
+                            <span>Diseño de Cejas</span>
+                            <span class="service-price">€15</span>
+                        </div>
+                        <div class="service-item">
+                            <span>Tintes de Cejas</span>
+                            <span class="service-price">€12</span>
+                        </div>
+                        <div class="service-item">
+                            <span>Lifting de Pestañas</span>
+                            <span class="service-price">€35</span>
+                        </div>
+                        <div class="service-item">
+                            <span>Depilación Facial (Cera)</span>
+                            <span class="service-price">€15</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="galeria" class="section section-bg-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestra Galería</h2>
+                <div class="line"></div>
+                <p>Resultados reales de nuestras clientas</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="galeria-1-pedicura-milky.jpg" alt="Pedicura semipermanente - Milky">
+                    <div class="gallery-overlay">
+                        <p>Pedicura semipermanente - Milky</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="galeria-2-manicura-lavanda.jpg" alt="Manicura semi - Lavanda">
+                    <div class="gallery-overlay">
+                        <p>Manicura semi - Lavanda</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="galeria-3-manicura-ojo-gato.jpg" alt="Manicura con extensión gel - ojo de gato">
+                    <div class="gallery-overlay">
+                        <p>Manicura con extensión gel - ojo de gato</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="galeria-4-manicura-rusa.jpg" alt="Manicura Rusa con extensión">
+                    <div class="gallery-overlay">
+                        <p>Manicura Rusa con extensión</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="galeria-5-manicura-nail-art.jpg" alt="Manicura Nail Art">
+                    <div class="gallery-overlay">
+                        <p>Manicura Nail Art</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="galeria-6-manicura-rusa-premium.jpg" alt="Manicura rusa premium">
+                    <div class="gallery-overlay">
+                        <p>Manicura rusa premium</p>
+                    </div>
+                </div>
+            </div>
+            <a href="https://www.instagram.com/cinnamon_nails_studio/" target="_blank" class="instagram-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                Ver más en Instagram @cinnamon_nails_studio
+            </a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Qué Dicen Nuestras Clientas</h2>
+                <div class="line"></div>
+                <p>Últimas valoraciones de Google Maps</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"¡Increíble servicio! Las uñas me duraron 3 semanas perfectas. El ambiente es relajante y las profesionales son amables. Definitivamente volveré."</p>
+                    <p class="testimonial-author">- Maria G.</p>
+                    <p class="testimonial-date">Hace 2 semanas</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"El servicio express de 40 minutos me salvó durante mi pausa del almuerzo. Perfecto para profesionales ocupadas que quieren estar perfectas."</p>
+                    <p class="testimonial-author">- Laura P.</p>
+                    <p class="testimonial-date">Hace 1 semana</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Me encanta que usan productos no tóxicos. Puedo disfrutar de una manicura hermosa sin preocuparme por mi salud. Highly recommend!"</p>
+                    <p class="testimonial-author">- Ana M.</p>
+                    <p class="testimonial-date">Hace 3 semanas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fidelity Card Section -->
+    <section id="fidelidad" class="section section-bg-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tarjeta de Fidelidad Online</h2>
+                <div class="line"></div>
+                <p>Ahorra con tu 5ª visita GRATIS</p>
+            </div>
+            <div class="features">
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Cómo Funciona</h3>
+                    <p>Acumula visitas en tu tarjeta digital. La 5ª cita es totalmente gratuita. Sin fecha de caducidad.</p>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon">📱</div>
+                    <h3>Siempre Disponible</h3>
+                    <p>Consulte su saldo de visitas en cualquier momento a través de WhatsApp o llamando al salón.</p>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Beneficios Exclusivos</h3>
+                    <p>Descuentos especiales para clientes recurrentes y promociones temporada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contáctanos</h2>
+                <div class="line"></div>
+                <p>Estamos aquí para ayudarte</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Información del Salón</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Dirección</strong>
+                            <p>Travessera de Gràcia 415, Local 1<br>08025 Barcelona, España</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <strong>Teléfono</strong>
+                            <p>641 717 985</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <strong>Email</strong>
+                            <p>cinnamonnails.sf@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div>
+                            <strong>Horario</strong>
+                            <p>Lunes - Viernes: 10:00 - 20:00<br>Sábados: 10:00 - 16:00</p>
+                        </div>
+                    </div>
+                    <div class="contact-buttons">
+                        <a href="https://wa.me/34641717985" target="_blank" class="cta-button btn-whatsapp">
+                            WhatsApp
+                        </a>
+                        <a href="tel:+34641717985" class="cta-button btn-call">
+                            Llamar
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Servicio de interés</label>
+                            <select id="service" name="service">
+                                <option value="">Selecciona un servicio</option>
+                                <option value="manicura">Manicura</option>
+                                <option value="pedicura">Pedicura</option>
+                                <option value="beauty">Beauty & Depilación</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+            <div class="map-section">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.9814395583685!2d2.153436!3d41.3987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f5f5f5f5f5f%3A0x0!2sTravessera%20de%20Gr%C3%A0cia%20415%2C%2008025%20Barcelona%2C%20Spain!5e0!3m2!1sen!2ses!4v1234567890"
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">Cinnamon <span>Nails</span></div>
+                    <p>Tu salón de uñas y belleza en Barcelona. Experiencia de más de 10 años.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/cinnamon_nails_studio/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/34641717985" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#fidelidad">Fidelidad</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#servicios">Manicura</a></li>
+                        <li><a href="#servicios">Pedicura</a></li>
+                        <li><a href="#servicios">Beauty & Depilación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cinnamon Nails Studio Barcelona. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Language switcher with complete translations
+        const translations = {
+            es: {
+                inicio: 'Inicio',
+                servicios: 'Servicios',
+                galeria: 'Galería',
+                fidelidad: 'Fidelidad',
+                contacto: 'Contacto',
+                reserva: 'Reserva',
+                hero_subtitle: '✨ Uñas Saludables & Belleza Natural ✨',
+                hero_title: 'Tu Momento de Belleza en Barcelona',
+                hero_description: 'Disfruta de nuestros servicios profesionales en un salón acogedor, con buena energía y un ambiente pensado para ti. Desde manicuras y tratamientos especializados hasta cuidados completos para tus uñas, encontrarás todo lo necesario para sentirte bien, relajarte y lucir impecable.',
+                stat_valoraciones: 'Valoraciones',
+                stat_experiencia: 'Experiencia',
+                stat_express: 'Express',
+                hero_cta: 'Reserva Tu Cita',
+                why_choose_us: '✨ Uñas hermosas, saludables y auténticas',
+                feature_1_title: 'Cuidado & belleza',
+                feature_1_desc: 'Tus uñas reciben lo mejor: productos libres de tóxicos, seguros y pensados para tu salud.',
+                feature_2_title: 'Servicio ágil y profesional',
+                feature_2_desc: 'Nos adaptamos a tu ritmo y necesidades. Cada trabajo se realiza con cuidado, sin prisas innecesarias, pero siempre con eficiencia.',
+                feature_3_title: 'Resultados que inspiran',
+                feature_3_desc: 'Cada clienta brilla con estilo propio. Creamos contenido auténtico que muestra resultados reales y listos para compartir.',
+                section_services: 'Nuestros Servicios',
+                section_services_subtitle: 'Calidad profesional con precios accesibles',
+                manicura: 'Manicura',
+                manicura_desc: 'Manicura profesional con productos de alta calidad y técnica experta.',
+                pedicura: 'Pedicura',
+                pedicura_desc: 'Pedicura profesional para relajarte y embellecer tus pies.',
+                beauty: 'Beauty & Depilación',
+                beauty_desc: 'Tratamientos de belleza y depilación profesional en Barcelona.',
+                section_gallery: 'Nuestra Galería',
+                section_gallery_subtitle: 'Resultados reales de nuestras clientas',
+                section_contact: 'Contacto',
+                contact_name: 'Nombre',
+                contact_email: 'Email',
+                contact_phone: 'Teléfono *',
+                contact_service: 'Servicio de interés',
+                contact_message: 'Mensaje',
+                contact_send: 'Enviar Mensaje',
+                contact_alert: '¡Gracias por tu mensaje! Se abrirá tu cliente de correo para enviar el mensaje a Cinnamon Nails.',
+                trust_badge: '4.8 en Google Maps'
+            },
+            en: {
+                inicio: 'Home',
+                servicios: 'Services',
+                galeria: 'Gallery',
+                fidelidad: 'Loyalty',
+                contacto: 'Contact',
+                reserva: 'Book',
+                hero_subtitle: '✨ Healthy Nails & Natural Beauty ✨',
+                hero_title: 'Your Beauty Moment in Barcelona',
+                hero_description: 'Enjoy our professional services in a cozy salon with good energy and an environment designed for you. From manicures and specialized treatments to complete nail care, you will find everything you need to feel good, relaxed, and look impeccable.',
+                stat_valoraciones: 'Reviews',
+                stat_experiencia: 'Experience',
+                stat_express: 'Express',
+                hero_cta: 'Book Your Appointment',
+                why_choose_us: '✨ Beautiful, Healthy & Authentic Nails',
+                feature_1_title: 'Care & Beauty',
+                feature_1_desc: 'Your nails receive the best: non-toxic, safe products designed for your health.',
+                feature_2_title: 'Agile & Professional Service',
+                feature_2_desc: 'We adapt to your pace and needs. Each job is done with care, without unnecessary haste, but always with efficiency.',
+                feature_3_title: 'Results that Inspire',
+                feature_3_desc: 'Each client shines with their own style. We create authentic content that shows real results ready to share.',
+                section_services: 'Our Services',
+                section_services_subtitle: 'Professional quality at affordable prices',
+                manicura: 'Manicure',
+                manicura_desc: 'Professional manicure with high-quality products and expert technique.',
+                pedicura: 'Pedicure',
+                pedicura_desc: 'Professional pedicure to relax and beautify your feet.',
+                beauty: 'Beauty & Depilation',
+                beauty_desc: 'Professional beauty and depilation treatments in Barcelona.',
+                section_gallery: 'Our Gallery',
+                section_gallery_subtitle: 'Real results from our clients',
+                section_contact: 'Contact',
+                contact_name: 'Name',
+                contact_email: 'Email',
+                contact_phone: 'Phone *',
+                contact_service: 'Service of Interest',
+                contact_message: 'Message',
+                contact_send: 'Send Message',
+                contact_alert: 'Thank you for your message! Your email client will open to send the message to Cinnamon Nails.',
+                trust_badge: '4.8 on Google Maps'
+            },
+            ca: {
+                inicio: 'Inici',
+                servicios: 'Serveis',
+                galeria: 'Galeria',
+                fidelidad: 'Fidelitat',
+                contacto: 'Contacte',
+                reserva: 'Reserva',
+                hero_subtitle: '✨ Ungles Sanejables & Bellesa Natural ✨',
+                hero_title: 'El Teu Moment de Bellesa a Barcelona',
+                hero_description: 'Gaudiu dels nostres serveis professionals en un saló acollidor, amb bona energia i un ambient pensat per a tu. Des de manicures i tractaments especialitzats fins a cures completes per a les teves ungles, trobaràs tot el necessari per sentir-te bé, relaxar-te i veure impecable.',
+                stat_valoraciones: 'Valoracions',
+                stat_experiencia: 'Experiència',
+                stat_express: 'Express',
+                hero_cta: 'Reserva la Teua Cita',
+                why_choose_us: '✨ Ungles boniques, sanes i autèntiques',
+                feature_1_title: 'Cura & bellesa',
+                feature_1_desc: 'Les teves ungles reben el millor: productes lliures de tòxics, segurs i pensats per a la teva salut.',
+                feature_2_title: 'Servei àgil i professional',
+                feature_2_desc: 'Ens adaptem al teu ritme i necessitats. Cada treball es realitza amb cura, sense presses innecessàries, però sempre amb eficiència.',
+                feature_3_title: 'Resultats que inspiren',
+                feature_3_desc: 'Cada client brilla amb el seu propi estil. Creem contingut autèntic que mostra resultats reals i llestos per compartir.',
+                section_services: 'Els Nostres Serveis',
+                section_services_subtitle: 'Qualitat professional amb preus assequibles',
+                manicura: 'Manicura',
+                manicura_desc: 'Manicura professional amb productes d\'alta qualitat i tècnica experta.',
+                pedicura: 'Pedicura',
+                pedicura_desc: 'Pedicura professional per relaxar-te i embellir els teus peus.',
+                beauty: 'Bellesa & Depilació',
+                beauty_desc: 'Tractaments professionals de bellesa i depilació a Barcelona.',
+                section_gallery: 'La Nova Galeria',
+                section_gallery_subtitle: 'Resultats reals de les nostres clientes',
+                section_contact: 'Contacte',
+                contact_name: 'Nom',
+                contact_email: 'Correu electrònic',
+                contact_phone: 'Telèfon *',
+                contact_service: 'Servei d\'interès',
+                contact_message: 'Missatge',
+                contact_send: 'Enviar Missatge',
+                contact_alert: 'Gràcies pel teu missatge! S\'obrirà el teu client de correu per enviar el missatge a Cinnamon Nails.',
+                trust_badge: '4.8 a Google Maps'
+            }
+        };
+
+        const langBtns = document.querySelectorAll('.lang-btn');
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                langBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                // Save language preference
+                const lang = btn.dataset.lang;
+                localStorage.setItem('selectedLanguage', lang);
+                // Change language
+                changeLanguage(lang);
+            });
+        });
+
+        function changeLanguage(lang) {
+            const trans = translations[lang];
+            if (!trans) return;
+
+            // Navigation
+            document.querySelectorAll('.nav-text').forEach(el => {
+                const key = el.dataset.key;
+                if (trans[key]) {
+                    el.textContent = trans[key];
+                }
+            });
+
+            // Hero section
+            const heroSubtitle = document.querySelector('.subtitle');
+            const heroTitle = document.querySelector('.hero-text h1');
+            const heroDesc = document.querySelector('.hero-text .description');
+            const statLabels = document.querySelectorAll('.stat-label');
+            const heroCta = document.querySelector('.hero-text .cta-button');
+            const trustBadge = document.querySelector('.trust-badge p');
+
+            if (heroSubtitle) heroSubtitle.textContent = trans.hero_subtitle;
+            if (heroTitle) heroTitle.textContent = trans.hero_title;
+            if (heroDesc) heroDesc.textContent = trans.hero_description;
+            if (statLabels[0]) statLabels[0].textContent = trans.stat_valoraciones;
+            if (statLabels[1]) statLabels[1].textContent = trans.stat_experiencia;
+            if (statLabels[2]) statLabels[2].textContent = trans.stat_express;
+            if (heroCta) heroCta.textContent = trans.hero_cta;
+            if (trustBadge) trustBadge.textContent = trans.trust_badge;
+
+            // Choose us section
+            const chooseUsTitle = document.querySelector('#features .section-header h2');
+            const featureTitles = document.querySelectorAll('.feature-card h3');
+            const featureDescs = document.querySelectorAll('.feature-card p');
+
+            if (chooseUsTitle) chooseUsTitle.textContent = trans.why_choose_us;
+            if (featureTitles[0]) featureTitles[0].textContent = trans.feature_1_title;
+            if (featureDescs[0]) featureDescs[0].textContent = trans.feature_1_desc;
+            if (featureTitles[1]) featureTitles[1].textContent = trans.feature_2_title;
+            if (featureDescs[1]) featureDescs[1].textContent = trans.feature_2_desc;
+            if (featureTitles[2]) featureTitles[2].textContent = trans.feature_3_title;
+            if (featureDescs[2]) featureDescs[2].textContent = trans.feature_3_desc;
+
+            // Services section
+            const servicesTitle = document.querySelector('#servicios .section-header h2');
+            const servicesSubtitle = document.querySelector('#servicios .section-header p');
+            const serviceTitles = document.querySelectorAll('.service-content h3');
+            const serviceDescs = document.querySelectorAll('.service-content .service-description');
+
+            if (servicesTitle) servicesTitle.textContent = trans.section_services;
+            if (servicesSubtitle) servicesSubtitle.textContent = trans.section_services_subtitle;
+            if (serviceTitles[0]) serviceTitles[0].textContent = trans.manicura;
+            if (serviceDescs[0]) serviceDescs[0].textContent = trans.manicura_desc;
+            if (serviceTitles[1]) serviceTitles[1].textContent = trans.pedicura;
+            if (serviceDescs[1]) serviceDescs[1].textContent = trans.pedicura_desc;
+            if (serviceTitles[2]) serviceTitles[2].textContent = trans.beauty;
+            if (serviceDescs[2]) serviceDescs[2].textContent = trans.beauty_desc;
+
+            // Gallery section
+            const galleryTitle = document.querySelector('#galeria .section-header h2');
+            const gallerySubtitle = document.querySelector('#galeria .section-header p');
+
+            if (galleryTitle) galleryTitle.textContent = trans.section_gallery;
+            if (gallerySubtitle) gallerySubtitle.textContent = trans.section_gallery_subtitle;
+
+            // Contact section
+            const contactTitle = document.querySelector('#contacto .section-header h2');
+            const nameLabel = document.querySelector('label[for="name"]');
+            const emailLabel = document.querySelector('label[for="email"]');
+            const phoneLabel = document.querySelector('label[for="phone"]');
+            const serviceLabel = document.querySelector('label[for="service"]');
+            const messageLabel = document.querySelector('label[for="message"]');
+            const submitBtn = document.querySelector('.submit-button');
+            const serviceOptions = document.querySelectorAll('#service option');
+
+            if (contactTitle) contactTitle.textContent = trans.section_contact;
+            if (nameLabel) nameLabel.textContent = trans.contact_name;
+            if (emailLabel) emailLabel.textContent = trans.contact_email;
+            if (phoneLabel) phoneLabel.textContent = trans.contact_phone;
+            if (serviceLabel) serviceLabel.textContent = trans.contact_service;
+            if (messageLabel) messageLabel.textContent = trans.contact_message;
+            if (submitBtn) submitBtn.textContent = trans.contact_send;
+            if (serviceOptions[1]) serviceOptions[1].textContent = trans.manicura;
+            if (serviceOptions[2]) serviceOptions[2].textContent = trans.pedicura;
+            if (serviceOptions[3]) serviceOptions[3].textContent = trans.beauty;
+        }
+
+        // Load saved language preference on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage');
+            if (savedLang) {
+                langBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.lang === savedLang) {
+                        btn.classList.add('active');
+                    }
+                });
+                changeLanguage(savedLang);
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            const subject = `Formulario de Contacto - Cinnamon Nails - ${name}`;
+            const body = `Nombre: ${name}%0D%0AEmail: ${email}%0D%0ATeléfono: ${phone}%0D%0AServicio de interés: ${service}%0D%0A%0D%0AMensaje:%0D%0A${message}`;
+
+            window.location.href = `mailto:cinnamonnails.sf@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+            alert('¡Gracias por tu mensaje! Se abrirá tu cliente de correo para enviar el mensaje a Cinnamon Nails.');
+            this.reset();
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.classList.add('fade-in');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
