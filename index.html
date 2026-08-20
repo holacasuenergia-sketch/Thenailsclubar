@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Nails Club Studio | Manicura & Pedicura Rusa, Soft Gel, Kapping y Esmaltado Semipermanente en CABA. El cuidado está en los detalles.">
-    <meta name="keywords" content="The Nails Club, manicura rusa, pedicura rusa, soft gel, kapping, esmaltado semipermanente, CABA, uñas buenos aires">
     <title>The Nails Club | Manicura & Pedicura Studio | CABA</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         * {
@@ -26,6 +28,7 @@
             --text-main: #2C2C2C;
             --text-muted: #666666;
             --white: #FFFFFF;
+            --whatsapp-green: #25D366;
             --border-color: #E5E5E5;
             --radius: 8px;
             --transition: all 0.3s ease;
@@ -50,7 +53,7 @@
             padding: 0 1.5rem;
         }
 
-        /* Header */
+        /* Header & Navbar */
         header {
             position: fixed;
             top: 0;
@@ -60,7 +63,7 @@
             backdrop-filter: blur(5px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
         }
 
         nav {
@@ -69,25 +72,41 @@
             align-items: center;
         }
 
-        .logo {
-            text-align: center;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
             text-decoration: none;
             color: var(--brand-dark);
         }
 
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
         .logo-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             line-height: 1;
         }
 
         .logo-sub {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             letter-spacing: 2px;
             color: var(--text-muted);
             text-transform: uppercase;
+            margin-top: 2px;
         }
 
         .nav-links {
@@ -105,17 +124,18 @@
             transition: var(--transition);
         }
 
-        .nav-links a:hover {
-            color: var(--brand-dark);
-        }
+        .nav-links a:hover { color: var(--brand-dark); }
 
         .btn-primary {
             background: var(--brand-dark);
             color: var(--white) !important;
-            padding: 0.6rem 1.4rem;
+            padding: 0.6rem 1.2rem;
             border-radius: var(--radius);
             font-weight: 500;
             transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .btn-primary:hover {
@@ -130,11 +150,21 @@
             background: var(--brand-soft);
         }
 
+        .hero-logo-main {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--brand-nude);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
         .hero h1 {
             font-size: 2.8rem;
             font-weight: 600;
             color: var(--brand-dark);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
 
         .hero .slogan {
@@ -151,7 +181,7 @@
             font-size: 0.95rem;
         }
 
-        /* General Section Headers */
+        /* Section Titles */
         .section-title {
             text-align: center;
             font-size: 2rem;
@@ -166,10 +196,8 @@
             margin-bottom: 3rem;
         }
 
-        /* Services Section */
-        .services {
-            padding: 5rem 0;
-        }
+        /* Services Grid */
+        .services { padding: 5rem 0; }
 
         .services-grid {
             display: grid;
@@ -179,7 +207,7 @@
 
         .service-card {
             border: 1px solid var(--border-color);
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem 2rem;
             border-radius: var(--radius);
             text-align: center;
             transition: var(--transition);
@@ -191,8 +219,14 @@
             transform: translateY(-3px);
         }
 
+        .service-icon {
+            font-size: 1.8rem;
+            color: var(--brand-dark);
+            margin-bottom: 1rem;
+        }
+
         .service-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-bottom: 0.8rem;
             color: var(--brand-dark);
         }
@@ -202,7 +236,7 @@
             color: var(--text-muted);
         }
 
-        /* Testimonials Section */
+        /* Testimonials */
         .testimonials {
             padding: 5rem 0;
             background-color: var(--brand-soft);
@@ -219,13 +253,12 @@
             border: 1px solid var(--border-color);
             padding: 2rem;
             border-radius: var(--radius);
-            position: relative;
         }
 
         .testimonial-card .stars {
             color: #E8A846;
             margin-bottom: 0.8rem;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
         }
 
         .testimonial-card p {
@@ -248,16 +281,48 @@
             border-top: 1px solid var(--border-color);
         }
 
-        .ig-handle {
-            display: inline-block;
-            font-size: 1.1rem;
+        .ig-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--brand-dark);
-            margin-top: 0.5rem;
+            margin-top: 1rem;
             text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            transition: var(--transition);
         }
 
-        .ig-handle:hover { text-decoration: underline; }
+        .ig-button:hover {
+            border-color: var(--brand-dark);
+            background: var(--brand-soft);
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp-green);
+            color: var(--white);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
 
         /* Footer */
         footer {
@@ -301,17 +366,21 @@
 
     <header>
         <nav class="container">
-            <a href="#" class="logo">
-                <div class="logo-title">THE NAILS CLUB</div>
-                <div class="logo-sub">STUDIO</div>
+            <a href="#" class="logo-container">
+                <!-- Reemplazar 'logo.jpg' con la imagen real de tu logo local o URL -->
+                <img src="https://www.instagram.com/thenailsclub_ba/profile_pic" alt="The Nails Club Studio Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/45?text=NC'">
+                <div class="logo-text">
+                    <span class="logo-title">THE NAILS CLUB</span>
+                    <span class="logo-sub">STUDIO</span>
+                </div>
             </a>
-            <button class="mobile-menu-btn" id="menuBtn">☰</button>
+            <button class="mobile-menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#testimonios">Testimonios</a></li>
                 <li><a href="#instagram">Instagram</a></li>
-                <li><a href="https://wa.me/tu-numero-aqui" target="_blank" class="btn-primary">Pedir Turno</a></li>
+                <li><a href="https://wa.me/tu-numero-aqui" target="_blank" class="btn-primary"><i class="fa-brands fa-whatsapp"></i> Pedir Turno</a></li>
             </ul>
         </nav>
     </header>
@@ -320,10 +389,12 @@
         <!-- Hero Section -->
         <section id="inicio" class="hero">
             <div class="container">
+                <!-- Imagen del Logo Principal -->
+                <img src="https://via.placeholder.com/110?text=THE+NAILS+CLUB" alt="The Nails Club Studio" class="hero-logo-main">
                 <h1>The Nails Club</h1>
                 <p class="slogan">🤍 El cuidado está en los detalles</p>
                 <p>Especialistas en manicura y pedicura estética en CABA. Diseños y técnicas avanzadas para el cuidado y salud de tus uñas.</p>
-                <a href="https://wa.me/tu-numero-aqui" target="_blank" class="btn-primary">Agendar Turno por WhatsApp</a>
+                <a href="https://wa.me/tu-numero-aqui" target="_blank" class="btn-primary"><i class="fa-brands fa-whatsapp"></i> Agendar Turno por WhatsApp</a>
             </div>
         </section>
 
@@ -335,18 +406,22 @@
                 
                 <div class="services-grid">
                     <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
                         <h3>Manicura & Pedicura Rusa</h3>
                         <p>Limpieza profunda y precisa de cutículas para un acabado impecable y de mayor duración.</p>
                     </div>
                     <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-gem"></i></div>
                         <h3>Soft Gel</h3>
                         <p>Tips de gel de cobertura completa que aportan largo, resistencia y un look natural.</p>
                     </div>
                     <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
                         <h3>Kapping</h3>
                         <p>Capa protectora sobre tu uña natural para reforzarla y evitar rupturas o escamado.</p>
                     </div>
                     <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                         <h3>Esmaltado Semipermanente</h3>
                         <p>Color perfecto, alta pigmentación y brillo intacto durante semanas.</p>
                     </div>
@@ -354,7 +429,7 @@
             </div>
         </section>
 
-        <!-- Testimonios / Reseñas -->
+        <!-- Testimonios -->
         <section id="testimonios" class="testimonials">
             <div class="container">
                 <h2 class="section-title">Testimonios</h2>
@@ -362,19 +437,37 @@
 
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
                         <p>"La manicura rusa me dura intacta casi un mes. El nivel de detalle y prolijidad que tienen no lo encontré en otro lugar."</p>
                         <span class="client-name">Camila R.</span>
                     </div>
 
                     <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
                         <p>"Me hice Kapping porque tenía las uñas muy frágiles y fue un cambio total. Súper recomendadas las chicas."</p>
                         <span class="client-name">Valeria M.</span>
                     </div>
 
                     <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
                         <p>"Hermosa atención y el estudio es híper impecable. Los Soft Gel quedan súper naturales y prolijos."</p>
                         <span class="client-name">Agustina L.</span>
                     </div>
@@ -387,14 +480,21 @@
             <div class="container">
                 <h2 class="section-title">Seguinos en Instagram</h2>
                 <p>Mirá nuestros últimos trabajos y diseños diarios</p>
-                <a href="https://www.instagram.com/thenailsclub_ba/" target="_blank" class="ig-handle">@thenailsclub_ba ↗</a>
+                <a href="https://www.instagram.com/thenailsclub_ba/" target="_blank" class="ig-button">
+                    <i class="fa-brands fa-instagram"></i> @thenailsclub_ba
+                </a>
             </div>
         </section>
     </main>
 
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/tu-numero-aqui" class="whatsapp-float" target="_blank" aria-label="Contacto por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <footer>
         <div class="container">
-            <p><strong>The Nails Club</strong> | CABA, Buenos Aires</p>
+            <p><i class="fa-solid fa-location-dot"></i> <strong>The Nails Club Studio</strong> | CABA, Buenos Aires</p>
             <p style="margin-top: 0.5rem;">&copy; 2026 Todos los derechos reservados.</p>
         </div>
     </footer>
