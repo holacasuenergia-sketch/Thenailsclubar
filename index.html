@@ -9,22 +9,22 @@
     <!-- Google Fonts Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --luxury-black: #111111;
-            --luxury-gold: #B89248;
-            --luxury-bg-hero: #EFEBE4; /* Tono arena suave para alto contraste */
-            --luxury-bg-gallery: #E6E0D7; /* Tono tierra claro distinguible */
+            --luxury-black: #1A1A1A;
+            --luxury-gold: #C5A059;
+            --luxury-bg-soft: #FAF8F5; /* Fondo ultra suave, neutro y elegante */
+            --luxury-bg-alt: #F4F0EA;  /* Segundo tono neutro muy sutil */
             --luxury-white: #FFFFFF;
-            --text-dark: #121212;
-            --text-muted: #4A4A4A;
-            --border-subtle: rgba(184, 146, 72, 0.3);
-            --transition-smooth: all 0.4s ease;
+            --text-dark: #2C2C2C;
+            --text-muted: #666666;
+            --border-subtle: rgba(0, 0, 0, 0.05);
+            --transition-smooth: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         * {
@@ -33,27 +33,32 @@
             box-sizing: border-box;
         }
 
-        html { scroll-behavior: smooth; }
+        html { 
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
 
         body {
             font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
             background-color: var(--luxury-white);
-            line-height: 1.7;
-            font-weight: 400;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Tipografía con alto contraste */
+        /* Tipografía Delicada */
         h1, h2, h3, .brand-title {
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            letter-spacing: 2px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
         }
 
         .container {
-            max-width: 1200px;
+            width: 100%;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
 
         /* Header / Navigation */
@@ -62,11 +67,11 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-subtle);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
         }
 
         nav {
@@ -78,17 +83,17 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.8rem;
             text-decoration: none;
             color: var(--luxury-black);
         }
 
         .logo-img {
-            width: 46px;
-            height: 46px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             object-fit: cover;
-            border: 1px solid var(--luxury-gold);
+            border: 1px solid rgba(197, 160, 89, 0.4);
         }
 
         .logo-text {
@@ -97,38 +102,38 @@
         }
 
         .logo-title {
-            font-size: 1.2rem;
-            letter-spacing: 3px;
+            font-size: 1rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
             line-height: 1;
-            font-weight: 700;
-            color: var(--text-dark);
+            font-weight: 400;
+            color: var(--luxury-black);
         }
 
         .logo-sub {
-            font-size: 0.65rem;
-            letter-spacing: 4px;
+            font-size: 0.55rem;
+            letter-spacing: 3px;
             color: var(--luxury-gold);
             text-transform: uppercase;
             margin-top: 3px;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
+            font-weight: 400;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2rem;
             align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 500;
+            font-weight: 400;
             transition: var(--transition-smooth);
         }
 
@@ -137,182 +142,176 @@
         .btn-luxury {
             background: var(--luxury-black);
             color: var(--luxury-white) !important;
-            padding: 0.8rem 1.8rem;
-            border-radius: 0;
-            font-size: 0.75rem !important;
+            padding: 0.7rem 1.4rem;
+            font-size: 0.7rem !important;
             letter-spacing: 2px !important;
             text-transform: uppercase;
             transition: var(--transition-smooth);
             border: 1px solid var(--luxury-black);
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            font-weight: 500;
+            gap: 0.5rem;
+            font-weight: 400;
         }
 
         .btn-luxury:hover {
             background: var(--luxury-gold);
-            color: var(--luxury-white) !important;
             border-color: var(--luxury-gold);
         }
 
-        /* Hero Section Rediseñada con Fondo de Alto Contraste */
+        /* Hero Section */
         .hero {
-            padding: 12rem 0 7rem;
+            padding: 9rem 0 5rem;
             text-align: center;
-            background-color: var(--luxury-bg-hero);
-            position: relative;
+            background-color: var(--luxury-bg-soft);
             border-bottom: 1px solid var(--border-subtle);
         }
 
         .hero-tagline {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 4px;
             color: var(--luxury-gold);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
+            margin-bottom: 1.2rem;
+            font-weight: 400;
         }
 
         .hero-logo-main {
-            width: 125px;
-            height: 125px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 2rem;
-            border: 2px solid var(--luxury-gold);
-            padding: 3px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin: 0 auto 1.5rem;
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            padding: 2px;
             background: var(--luxury-white);
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 2.8rem;
             line-height: 1.1;
             color: var(--luxury-black);
             margin-bottom: 0.2rem;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            font-weight: 700;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+            letter-spacing: 3px;
+            font-weight: 400;
         }
 
         .hero-sub-title {
-            font-size: 1.2rem;
-            letter-spacing: 8px;
+            font-size: 0.95rem;
+            letter-spacing: 6px;
             color: var(--luxury-gold);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             text-transform: uppercase;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
+            font-weight: 300;
         }
 
         .hero .slogan {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             font-style: italic;
             color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
+            margin-bottom: 1.2rem;
+            font-weight: 300;
         }
 
         .hero p.description {
-            max-width: 580px;
-            margin: 0 auto 2.5rem;
+            max-width: 520px;
+            margin: 0 auto 2rem;
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             line-height: 1.8;
-            font-weight: 400;
+            font-weight: 300;
         }
 
         /* Section Styling */
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .section-title {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             color: var(--luxury-black);
             text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 700;
+            letter-spacing: 2px;
+            font-weight: 400;
         }
 
         .section-divider {
-            width: 50px;
-            height: 2px;
+            width: 35px;
+            height: 1px;
             background: var(--luxury-gold);
-            margin: 1rem auto;
+            margin: 0.8rem auto;
         }
 
         .section-subtitle {
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 500;
+            font-weight: 300;
         }
 
         /* Services Section */
-        .services { padding: 7rem 0; }
+        .services { padding: 5rem 0; }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
         }
 
         .service-card {
             background: var(--luxury-white);
-            border: 1px solid rgba(0,0,0,0.08);
-            padding: 3.5rem 2rem 3rem;
+            border: 1px solid var(--border-subtle);
+            padding: 2.5rem 1.5rem;
             text-align: center;
             transition: var(--transition-smooth);
         }
 
         .service-card:hover {
             border-color: var(--luxury-gold);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+            transform: translateY(-3px);
         }
 
         .service-icon {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             color: var(--luxury-gold);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .service-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
             color: var(--luxury-black);
+            font-weight: 400;
         }
 
         .service-card p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            line-height: 1.7;
+            line-height: 1.6;
+            font-weight: 300;
         }
 
-        /* Gallery Section con Fondo Diferenciado */
+        /* Gallery Section */
         .gallery {
-            padding: 7rem 0;
-            background-color: var(--luxury-bg-gallery);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
+            padding: 5rem 0;
+            background-color: var(--luxury-bg-alt);
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
         }
 
         .gallery-item {
             position: relative;
             overflow: hidden;
             aspect-ratio: 3 / 4;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            background: #EAEAEA;
         }
 
         .gallery-item img {
@@ -324,53 +323,53 @@
         }
 
         .gallery-item:hover img {
-            transform: scale(1.06);
+            transform: scale(1.04);
         }
 
         /* Testimonials Section */
-        .testimonials { padding: 7rem 0; }
+        .testimonials { padding: 5rem 0; }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
         }
 
         .testimonial-card {
             background: var(--luxury-white);
-            border: 1px solid rgba(0,0,0,0.08);
-            padding: 3rem 2.5rem;
+            border: 1px solid var(--border-subtle);
+            padding: 2.2rem 1.8rem;
             text-align: center;
         }
 
         .testimonial-card .stars {
             color: var(--luxury-gold);
-            margin-bottom: 1.2rem;
-            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            font-size: 0.75rem;
             letter-spacing: 2px;
         }
 
         .testimonial-card p {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: var(--text-dark);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             font-style: italic;
-            line-height: 1.6;
-            font-weight: 500;
+            line-height: 1.5;
+            font-weight: 400;
         }
 
         .testimonial-card .client-name {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             color: var(--luxury-gold);
-            font-weight: 600;
+            font-weight: 400;
         }
 
         /* Instagram Section */
         .instagram-section {
-            padding: 6rem 0;
+            padding: 4.5rem 0;
             text-align: center;
             background: var(--luxury-black);
             color: var(--luxury-white);
@@ -378,51 +377,53 @@
 
         .instagram-section .section-title {
             color: var(--luxury-white);
+            font-size: 1.8rem;
         }
 
         .instagram-section p {
-            color: #AAAAAA;
-            font-size: 0.85rem;
+            color: #999999;
+            font-size: 0.75rem;
             letter-spacing: 1px;
-            margin-top: 0.5rem;
+            margin-top: 0.4rem;
+            font-weight: 300;
         }
 
         .ig-button {
             display: inline-flex;
             align-items: center;
-            gap: 0.8rem;
-            font-size: 0.8rem;
-            letter-spacing: 3px;
+            gap: 0.6rem;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--luxury-white);
-            margin-top: 2rem;
+            margin-top: 1.8rem;
             text-decoration: none;
-            padding: 0.9rem 2.2rem;
+            padding: 0.8rem 1.8rem;
             border: 1px solid var(--luxury-gold);
             transition: var(--transition-smooth);
-            font-weight: 500;
+            font-weight: 300;
         }
 
         .ig-button:hover {
             background: var(--luxury-gold);
-            color: var(--luxury-white);
+            color: var(--luxury-black);
         }
 
         /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
             background-color: var(--luxury-black);
             color: var(--luxury-white);
-            width: 55px;
-            height: 55px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            font-size: 1.3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
             z-index: 1000;
             border: 1px solid var(--luxury-gold);
             transition: var(--transition-smooth);
@@ -430,31 +431,38 @@
 
         .whatsapp-float:hover {
             background-color: var(--luxury-gold);
-            transform: translateY(-3px);
+            color: var(--luxury-black);
         }
 
         /* Footer */
         footer {
-            background: #080808;
-            color: #888888;
-            padding: 2.5rem 0;
+            background: #111111;
+            color: #777777;
+            padding: 2rem 0;
             text-align: center;
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             letter-spacing: 2px;
             text-transform: uppercase;
+            font-weight: 300;
         }
 
-        /* Mobile Nav Button */
+        /* Mobile Responsive Controls */
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             cursor: pointer;
             color: var(--luxury-black);
+            padding: 0.5rem;
         }
 
+        /* Adaptación Específica para Celulares y Tablets */
         @media (max-width: 768px) {
+            .mobile-menu-btn { 
+                display: block; 
+            }
+
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -463,12 +471,72 @@
                 left: 0;
                 right: 0;
                 background: var(--luxury-white);
-                padding: 2rem;
+                padding: 1.8rem 1.5rem;
                 border-bottom: 1px solid var(--border-subtle);
+                gap: 1.2rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             }
-            .nav-links.active { display: flex; }
-            .mobile-menu-btn { display: block; }
-            .hero h1 { font-size: 2.8rem; }
+
+            .nav-links.active { 
+                display: flex; 
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .btn-luxury {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 7rem 0 3.5rem;
+            }
+
+            .hero h1 { 
+                font-size: 2.1rem; 
+                letter-spacing: 2px;
+            }
+
+            .hero-sub-title {
+                font-size: 0.8rem;
+                letter-spacing: 4px;
+            }
+
+            .hero .slogan {
+                font-size: 1.1rem;
+            }
+
+            .hero p.description {
+                font-size: 0.8rem;
+                padding: 0 0.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .services, .gallery, .testimonials {
+                padding: 3.5rem 0;
+            }
+
+            /* Galería en 2 columnas para celulares */
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+            }
+
+            .services-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .service-card, .testimonial-card {
+                padding: 1.8rem 1.2rem;
+            }
         }
     </style>
 </head>
@@ -483,7 +551,9 @@
                     <span class="logo-sub">STUDIO</span>
                 </div>
             </a>
-            <button class="mobile-menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
@@ -554,19 +624,19 @@
 
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="galeria-1-pedicura-milky.jpg" alt="Pedicura Milky">
+                        <img src="galeria-1-pedicura-milky.jpg" alt="Portfolio Trabajo 1">
                     </div>
                     <div class="gallery-item">
-                        <img src="galeria-2-manicura-lavanda.jpg" alt="Manicura Lavanda">
+                        <img src="galeria-2-manicura-lavanda.jpg" alt="Portfolio Trabajo 2">
                     </div>
                     <div class="gallery-item">
-                        <img src="galeria-3-manicura-ojo-gato.jpg" alt="Manicura Ojo de Gato">
+                        <img src="galeria-3-manicura-ojo-gato.jpg" alt="Portfolio Trabajo 3">
                     </div>
                     <div class="gallery-item">
-                        <img src="galeria-4-manicura-rusa.jpg" alt="Manicura Rusa">
+                        <img src="galeria-4-manicura-rusa.jpg" alt="Portfolio Trabajo 4">
                     </div>
                     <div class="gallery-item">
-                        <img src="galeria-5-manicura-nail-art.jpg" alt="Manicura Nail Art">
+                        <img src="galeria-5-manicura-nail-art.jpg" alt="Portfolio Trabajo 5">
                     </div>
                 </div>
             </div>
@@ -622,7 +692,7 @@
 
     <footer>
         <div class="container">
-            <p><strong>The Nails Club Studio</strong> &bull; Buenos Aires, Argentina &bull; 2026</p>
+            <p>The Nails Club Studio &bull; Buenos Aires, Argentina &bull; 2026</p>
         </div>
     </footer>
 
@@ -632,6 +702,13 @@
 
         menuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+        });
+
+        // Cierra el menú al presionar una opción en móviles
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
         });
     </script>
 </body>
