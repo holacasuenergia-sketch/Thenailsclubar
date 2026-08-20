@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Nails Club Studio | Manicura & Pedicura - Studio en CABA. El arte del detalle y la elegancia.">
-    <title>THE NAILS CLUB STUDIO | Manicura & Pedicura</title>
+    <meta name="description" content="The Nails Club Studio | Haute Manicure & Pedicure Studio en CABA. El arte del detalle y la elegancia.">
+    <title>THE NAILS CLUB STUDIO | Haute Manicure & Pedicure</title>
 
     <!-- Google Fonts Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --luxury-black: #0D0D0D;
-            --luxury-gold: #C5A059;
-            --luxury-nude: #F4EBE1;
-            --luxury-beige: #EBE3D5;
-            --luxury-white: #FAF9F6;
-            --text-dark: #1F1F1F;
-            --text-muted: #737373;
-            --border-subtle: rgba(197, 160, 89, 0.2);
-            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            --luxury-black: #111111;
+            --luxury-gold: #B89248;
+            --luxury-bg-hero: #EFEBE4; /* Tono arena suave para alto contraste */
+            --luxury-bg-gallery: #E6E0D7; /* Tono tierra claro distinguible */
+            --luxury-white: #FFFFFF;
+            --text-dark: #121212;
+            --text-muted: #4A4A4A;
+            --border-subtle: rgba(184, 146, 72, 0.3);
+            --transition-smooth: all 0.4s ease;
         }
 
         * {
@@ -40,14 +40,13 @@
             color: var(--text-dark);
             background-color: var(--luxury-white);
             line-height: 1.7;
-            font-weight: 300;
-            letter-spacing: 0.3px;
+            font-weight: 400;
         }
 
-        /* Typography */
-        h1, h2, h3, .brand-title, .slogan {
+        /* Tipografía con alto contraste */
+        h1, h2, h3, .brand-title {
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 400;
+            font-weight: 600;
             letter-spacing: 2px;
         }
 
@@ -63,12 +62,11 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(250, 249, 246, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             z-index: 1000;
-            padding: 1.2rem 0;
-            transition: var(--transition-smooth);
+            padding: 1rem 0;
         }
 
         nav {
@@ -91,7 +89,6 @@
             border-radius: 50%;
             object-fit: cover;
             border: 1px solid var(--luxury-gold);
-            padding: 2px;
         }
 
         .logo-text {
@@ -104,17 +101,18 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             line-height: 1;
-            font-weight: 500;
+            font-weight: 700;
+            color: var(--text-dark);
         }
 
         .logo-sub {
-            font-size: 0.6rem;
-            letter-spacing: 5px;
+            font-size: 0.65rem;
+            letter-spacing: 4px;
             color: var(--luxury-gold);
             text-transform: uppercase;
-            margin-top: 4px;
+            margin-top: 3px;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
+            font-weight: 600;
         }
 
         .nav-links {
@@ -127,111 +125,103 @@
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 400;
-            transition: var(--transition-smooth);
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--luxury-gold);
+            font-weight: 500;
             transition: var(--transition-smooth);
         }
 
-        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--luxury-gold); }
 
         .btn-luxury {
             background: var(--luxury-black);
             color: var(--luxury-white) !important;
             padding: 0.8rem 1.8rem;
             border-radius: 0;
-            font-size: 0.7rem !important;
-            letter-spacing: 3px !important;
+            font-size: 0.75rem !important;
+            letter-spacing: 2px !important;
             text-transform: uppercase;
             transition: var(--transition-smooth);
             border: 1px solid var(--luxury-black);
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-        }
-
-        .btn-luxury:hover {
-            background: transparent;
-            color: var(--luxury-black) !important;
-            border-color: var(--luxury-black);
-        }
-
-        .btn-luxury::after { display: none !important; }
-
-        /* Hero Section */
-        .hero {
-            padding: 13rem 0 8rem;
-            text-align: center;
-            background: radial-gradient(circle, rgba(244,235,225,0.5) 0%, rgba(250,249,246,1) 70%);
-            position: relative;
-        }
-
-        .hero-tagline {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 6px;
-            color: var(--luxury-gold);
-            margin-bottom: 2rem;
             font-weight: 500;
         }
 
+        .btn-luxury:hover {
+            background: var(--luxury-gold);
+            color: var(--luxury-white) !important;
+            border-color: var(--luxury-gold);
+        }
+
+        /* Hero Section Rediseñada con Fondo de Alto Contraste */
+        .hero {
+            padding: 12rem 0 7rem;
+            text-align: center;
+            background-color: var(--luxury-bg-hero);
+            position: relative;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hero-tagline {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--luxury-gold);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
         .hero-logo-main {
-            width: 120px;
-            height: 120px;
+            width: 125px;
+            height: 125px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 2.5rem;
-            border: 1px solid var(--luxury-gold);
-            padding: 4px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            margin: 0 auto 2rem;
+            border: 2px solid var(--luxury-gold);
+            padding: 3px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background: var(--luxury-white);
         }
 
         .hero h1 {
             font-size: 3.8rem;
-            line-height: 1;
+            line-height: 1.1;
             color: var(--luxury-black);
             margin-bottom: 0.2rem;
             text-transform: uppercase;
             letter-spacing: 4px;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
         }
 
         .hero-sub-title {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             letter-spacing: 8px;
             color: var(--luxury-gold);
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
+            font-weight: 600;
         }
 
         .hero .slogan {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-style: italic;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
         }
 
         .hero p.description {
-            max-width: 540px;
-            margin: 0 auto 3rem;
+            max-width: 580px;
+            margin: 0 auto 2.5rem;
             color: var(--text-muted);
-            font-size: 0.85rem;
-            line-height: 1.9;
-            font-weight: 300;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-weight: 400;
         }
 
         /* Section Styling */
@@ -245,24 +235,26 @@
             color: var(--luxury-black);
             text-transform: uppercase;
             letter-spacing: 3px;
+            font-weight: 700;
         }
 
         .section-divider {
-            width: 40px;
-            height: 1px;
+            width: 50px;
+            height: 2px;
             background: var(--luxury-gold);
             margin: 1rem auto;
         }
 
         .section-subtitle {
             color: var(--text-muted);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            font-weight: 500;
         }
 
         /* Services Section */
-        .services { padding: 8rem 0; }
+        .services { padding: 7rem 0; }
 
         .services-grid {
             display: grid;
@@ -272,43 +264,42 @@
 
         .service-card {
             background: var(--luxury-white);
-            border: 1px solid rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.08);
             padding: 3.5rem 2rem 3rem;
             text-align: center;
             transition: var(--transition-smooth);
-            position: relative;
         }
 
         .service-card:hover {
             border-color: var(--luxury-gold);
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.06);
         }
 
         .service-icon {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--luxury-gold);
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .service-card h3 {
             font-size: 1.4rem;
             margin-bottom: 1rem;
             color: var(--luxury-black);
-            letter-spacing: 1px;
         }
 
         .service-card p {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            line-height: 1.8;
-            font-weight: 300;
+            line-height: 1.7;
         }
 
-        /* Gallery Section (Rediseñada) */
+        /* Gallery Section con Fondo Diferenciado */
         .gallery {
-            padding: 8rem 0;
-            background-color: var(--luxury-nude);
+            padding: 7rem 0;
+            background-color: var(--luxury-bg-gallery);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .gallery-grid {
@@ -321,7 +312,7 @@
             position: relative;
             overflow: hidden;
             aspect-ratio: 3 / 4;
-            background: var(--luxury-black);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
 
         .gallery-item img {
@@ -330,16 +321,14 @@
             object-fit: cover;
             display: block;
             transition: var(--transition-smooth);
-            opacity: 0.95;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.08);
-            opacity: 1;
+            transform: scale(1.06);
         }
 
         /* Testimonials Section */
-        .testimonials { padding: 8rem 0; }
+        .testimonials { padding: 7rem 0; }
 
         .testimonials-grid {
             display: grid;
@@ -349,33 +338,34 @@
 
         .testimonial-card {
             background: var(--luxury-white);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.08);
             padding: 3rem 2.5rem;
             text-align: center;
         }
 
         .testimonial-card .stars {
             color: var(--luxury-gold);
-            margin-bottom: 1.5rem;
-            font-size: 0.75rem;
-            letter-spacing: 3px;
+            margin-bottom: 1.2rem;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
         }
 
         .testimonial-card p {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--text-dark);
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
             font-style: italic;
             line-height: 1.6;
+            font-weight: 500;
         }
 
         .testimonial-card .client-name {
-            font-size: 0.65rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: var(--luxury-gold);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         /* Instagram Section */
@@ -391,8 +381,8 @@
         }
 
         .instagram-section p {
-            color: #999;
-            font-size: 0.8rem;
+            color: #AAAAAA;
+            font-size: 0.85rem;
             letter-spacing: 1px;
             margin-top: 0.5rem;
         }
@@ -401,7 +391,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.8rem;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--luxury-white);
@@ -410,11 +400,12 @@
             padding: 0.9rem 2.2rem;
             border: 1px solid var(--luxury-gold);
             transition: var(--transition-smooth);
+            font-weight: 500;
         }
 
         .ig-button:hover {
             background: var(--luxury-gold);
-            color: var(--luxury-black);
+            color: var(--luxury-white);
         }
 
         /* Floating WhatsApp Button */
@@ -430,8 +421,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            font-size: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             z-index: 1000;
             border: 1px solid var(--luxury-gold);
             transition: var(--transition-smooth);
@@ -439,20 +430,18 @@
 
         .whatsapp-float:hover {
             background-color: var(--luxury-gold);
-            color: var(--luxury-black);
             transform: translateY(-3px);
         }
 
         /* Footer */
         footer {
             background: #080808;
-            color: #666;
-            padding: 3rem 0;
+            color: #888888;
+            padding: 2.5rem 0;
             text-align: center;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         /* Mobile Nav Button */
@@ -460,7 +449,7 @@
             display: none;
             background: none;
             border: none;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             cursor: pointer;
             color: var(--luxury-black);
         }
@@ -474,7 +463,7 @@
                 left: 0;
                 right: 0;
                 background: var(--luxury-white);
-                padding: 2.5rem;
+                padding: 2rem;
                 border-bottom: 1px solid var(--border-subtle);
             }
             .nav-links.active { display: flex; }
@@ -510,7 +499,7 @@
         <!-- Hero Section -->
         <section id="inicio" class="hero">
             <div class="container">
-                <div class="hero-tagline"> Manicura & Pedicura Studio</div>
+                <div class="hero-tagline">Haute Manicure & Pedicure Studio</div>
                 <img src="nailsclub.png" alt="The Nails Club Studio" class="hero-logo-main">
                 <h1>THE NAILS CLUB</h1>
                 <div class="hero-sub-title">STUDIO</div>
@@ -565,19 +554,19 @@
 
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="galeria-1-pedicura-milky.jpg" alt="Portfolio Trabajo 1">
+                        <img src="galeria-1-pedicura-milky.jpg" alt="Pedicura Milky">
                     </div>
                     <div class="gallery-item">
-                        <img src="galeria-2-manicura-lavanda.jpg" alt="Portfolio Trabajo 2">
+                        <img src="galeria-2-manicura-lavanda.jpg" alt="Manicura Lavanda">
                     </div>
                     <div class="gallery-item">
-                        <img src="galeria-3-manicura-ojo-gato.jpg" alt="Portfolio Trabajo 3">
+                        <img src="galeria-3-manicura-ojo-gato.jpg" alt="Manicura Ojo de Gato">
                     </div>
                     <div class="gallery-item">
-                        <img src="galeria-4-manicura-rusa.jpg" alt="Portfolio Trabajo 4">
+                        <img src="galeria-4-manicura-rusa.jpg" alt="Manicura Rusa">
                     </div>
                     <div class="gallery-item">
-                        <img src="galeria-5-manicura-nail-art.jpg" alt="Portfolio Trabajo 5">
+                        <img src="galeria-5-manicura-nail-art.jpg" alt="Manicura Nail Art">
                     </div>
                 </div>
             </div>
@@ -618,7 +607,7 @@
         <section id="instagram" class="instagram-section">
             <div class="container">
                 <h2 class="section-title">@THENAILSCLUB_BA</h2>
-                <p>Nuestros diseños y cuidados </p>
+                <p>Nuestra bitácora diaria de diseño y cuidado</p>
                 <a href="https://www.instagram.com/thenailsclub_ba/" target="_blank" class="ig-button">
                     <i class="fa-brands fa-instagram"></i> Descubrir en Instagram
                 </a>
@@ -627,7 +616,7 @@
     </main>
 
     <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/+5491130400326" class="whatsapp-float" target="_blank" aria-label="Contacto por WhatsApp">
+    <a href="https://wa.me/tu-numero-aqui" class="whatsapp-float" target="_blank" aria-label="Contacto por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
